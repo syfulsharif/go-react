@@ -25,7 +25,7 @@ export default class AppClass extends Component {
     if (this.state.firstName !== "") {
       this.addPerson(this.state.firstName, this.state.lastName, this.state.dob);
     }
-  }
+  };
 
   addPerson(newFirst, newLast, newDoB) {
     // create the object
@@ -45,14 +45,13 @@ export default class AppClass extends Component {
       return 0;
     });
 
-    this.setState({crowd: sorted});
-    this.setState({firstName: "", lastName: "", dob: ""})
+    this.setState({ crowd: sorted });
+    this.setState({ firstName: "", lastName: "", dob: "" });
 
     this.firstNameRef.current.value = "";
     this.lastNameRef.current.value = "";
     this.dobRef.current.value = "";
   }
-
 
   componentDidMount() {
     this.setState({
@@ -141,7 +140,9 @@ export default class AppClass extends Component {
             name="last-name"
             autoComplete="last-name-new"
             className="form-control"
-            onChange={(event) => this.setState({ lastName: event.target.value })}
+            onChange={(event) =>
+              this.setState({ lastName: event.target.value })
+            }
           ></Input>
           <Input
             title="Date of Birth"
